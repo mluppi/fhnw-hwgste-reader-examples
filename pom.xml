@@ -6,9 +6,11 @@
 
     <groupId>io.github.mluppi</groupId>
     <artifactId>fhnw-hwgste-reader-examples</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 
     <properties>
+        <hwgste-api.version>1.1.0</hwgste-api.version>
+        <slf4j.version>2.0.5</slf4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -25,14 +27,24 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
             <groupId>ch.fhnw.imvs</groupId>
             <artifactId>hwgste-api</artifactId>
-            <version>1.0.0</version>
+            <version>${hwgste-api.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.fhnw.imvs</groupId>
             <artifactId>hwgste-reader</artifactId>
-            <version>1.0.0</version>
+            <version>${hwgste-api.version}</version>
         </dependency>
     </dependencies>
 

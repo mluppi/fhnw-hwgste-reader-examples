@@ -17,6 +17,8 @@ package io.github.mluppi.fhnw.hwgstereader.examples.util;
 
 import ch.fhnw.imvs.hwgstereader.api.HwgSteMeasurement;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteReading;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -27,6 +29,8 @@ import java.util.List;
  */
 public class PrintUtil {
 
+    private static final Logger logger = LoggerFactory.getLogger(PrintUtil.class);
+
     public static void printHwgSteReadings(final List<HwgSteReading> readings) {
         for (final HwgSteReading reading : readings) {
            printHwgSteMeasurements(reading.getMeasurements());
@@ -35,7 +39,9 @@ public class PrintUtil {
 
     public static void printHwgSteMeasurements(final List<HwgSteMeasurement> measurements) {
         for (final HwgSteMeasurement measurement : measurements) {
-            System.out.println(measurement.getType().name() + " " + measurement.getValue());
+            if (logger.isInfoEnabled()) {
+                logger.info("{} -> {}", measurement.getType().name(), measurement.getValue());
+            }
         }
     }
 
